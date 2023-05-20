@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoDi: Generate Anything from Anything All At Once
+through Composable Diffusion</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CoDi: Generate Anything from Anything All At Once
+through Composable Diffusion</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zinengtang.github.io/">Zineng Tang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ziyi-yang.github.io/">Ziyi Yang*</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/chezhu/">Chenguang Zhu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/nzeng/">Michael Zeng</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.unc.edu/~mbansal/">Mohit Bansal*</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of North Carolina at Chapel Hill,</span>
+            <span class="author-block"><sup>2</sup>Microsoft Azure Cognitive Services Research</span>
+			<span class="author-block"><sup>*</sup>Corresponding Authors</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+<!--              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+<!--              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code / Checkpoints (Coming Soon)</span>
+                  </a>
+              </span>
+<!--              Dataset Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="jquery.js"></script> 
+<script> 
+$(function(){
+$("#includedContent").load("demo_teaser.html"); 
+});
+</script> 
+	
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+		<div id="includedContent"></div>
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">CoDi</span> can generate anything to anything from video, image, audio, and text.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<script>
+includeHTML();
+</script>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we introduce Composable Diffusion (CoDi), 
+			an unprecedented generative model capable of generating any 
+			combination of multiple modalities, such as language, image, 
+			video, and audio, from any input modalities groups simultaneously.
+			Existing generative AI systems lack the ability to generate
+		    synchronized multimodal outputs and are limited in the types 
+			  of the modalities they can process. CoDi employs a novel 
+			  joint generation strategy by building a shared multimodal
+			   space in the diffusion process, enabling the synchronized
+				generation of intertwined modalities, such as temporally 
+				aligned video and audio. Despite the absence of available training
+				 datasets for many modality combinations, we manage to achieve the
+				  joint generation of any combination of modalities through a novel
+				   adaptive training strategy. Our proposed "Bridging Alignment" aligns
+					prompt modalities, allowing CoDi to freely condition on any input combinations.
+					 Highly customizable and flexible, CoDi unprecedentedly achieves any-modality 
+					 to any-modality generation, with high correspondence of joint modality generation. We show that CoDi's synthesis quality outperforms or is on par with unimodal state-of-the-art. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+   <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Model Architecture</h2>
+        <div class="publication-video">
+			<img width="600" class="arrow_center" src="static/images/main_architecture.jpg">
+			<p>Composable diffusion uses a multi-stage training scheme to achieve training on only linear number of tasks and inference on all combinations.</p>
+			<!-- <embed src=="static/images/main_architecture.pdf" width="500" height="375" 
+			 type="application/pdf"> -->
+		</div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+	<h2 class="title is-3" style="padding-top:50pt">Multiple Conditioning</h2>
+	<p style="padding-bottom: 20px;">
+	  Model takes in <em>multiple inputs</em> including video, image, text, or audio to generate outputs.
+	</p>
+		
+		<hr class='thickline'/>
+		<div class="row" style="overflow:hidden; vertical-align: middle;">
+				  <div class="column_demo">
+					    <div style="font-size: 20px; float: left; width: 100%; padding: 3px;">
+					      <p> "Oil painting, cosmic horror painting, elegant intricate artstation concept art by craig mullins detailed"
+				          </p>
+					    </div>
+						<div style="font-size: 16px; float: left; width: 100%; padding-top: 30px;">
+						  <audio controls style="width: 100%">
+						    <!-- <source src="horse.ogg" type="audio/ogg"> -->
+						    <source src="static/images/multi_in_in0-0.wav" type="audio/mpeg">
+						  Your browser does not support the audio element.
+						  </audio>
+						</div>
+				  </div>
+				  <div class="column_arrow">
+					  <div>
+					    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					  </div>
+				  </div>
+				  <div class="column_demo">
+					  	<div class="content" style="font-size: 12px; float: top; width: 100%; padding: 0px;">
+					  	  <img src="static/images/multi_in_out0.png">
+					  	</div>
+				  </div>
+		</div>
+		
+		<hr  class="dotline"/>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					    <div style="font-size: 20px; float: left; width: 100%; padding: 5px;">
+					      <p> "Gently flowers in a vase, still life, by Albert Williams"
+					      </p>
+					    </div>
+						<div class="center" style="font-size: 16px; width: 70%; padding: 0px;">
+						  <img src="static/images/multi_in_in1-0.jpg">
+						</div>
+				  </div>
+				  <div class="column_arrow">
+					  <div>
+					    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					  </div>
+				  </div>
+				  <div class="column_demo">
+					  	<div class="content" style="font-size: 12px; float: top; width: 100%; padding: 0px;">
+					  	  <img src="static/images/multi_in_out1.png">
+					  	</div>
+				  </div>
+		</div>
+		
+		<hr  class="dotline"/>
+       <div class="row" style="overflow:hidden">
+       		  <div class="column_demo">
+       			    <div style="font-size: 20px;  float: left; width: 100%; padding: 0px;">
+       			      <p> "Teddy bear on a skateboard, 4k, high resolution"
+       			      </p>
+       			    </div>
+					<div class="center" style="font-size: 16px; width: 70%; padding: 0px;">
+					  <img src="static/images/multi_in_in2-0.jpg">
+					</div>
+					<div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+					  <audio controls style="width: 100%">
+						<!-- <source src="horse.ogg" type="audio/ogg"> -->
+						<source src="static/images/multi_in_in2-0.wav" type="audio/mpeg">
+					  Your browser does not support the audio element.
+					  </audio>
+					</div>
+       		  </div>
+       		  <div class="column_arrow">
+       			  <div>
+       			    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+       			  </div>
+       		  </div>
+       		  <div class="column_demo">
+       			  	<div class="content" style="font-size: 12px; float: top; width: 100%; padding: 0px;">
+       			  	  <img src="static/images/multi_in_out2.jpg">
+       			  	</div>
+       		  </div>
+       </div>
+	   
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				    <div style="font-size: 20px; float: left; width: 100%; padding: 5px;">
+				      <p>"Forward moving camera view."</p>
+				    </div>
+				      <audio controls style="width: 100%; padding-top:80pt">
+				      <!-- <source src="horse.ogg" type="audio/ogg"> -->
+				      <source src="static/images/multi_in_in3.wav" type="audio/mpeg">
+				      Your browser does not support the audio element.
+				      </audio>
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  	<div class="content" style="font-size: 12px; float: top; width: 100%; padding: 0px;">
+				  	  <img src="static/images/multi_in_out3.gif">
+				  	</div>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				    <div style="font-size: 20px; float: left; width: 100%; padding-bottom: 10px;">
+				        <p> "Red gorgonian and tropical fish."
+				        </p>
+				      </div>
+				    
+				    <div class="center"  style="font-size: 16px; width: 75%; padding: 0px;">
+				      <img src="static/images/multi_in_in7.jpg">
+				    </div>
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  	<div class="content" style="font-size: 12px; float: top; width: 100%; padding: 0px;">
+				  	  <img src="static/images/multi_in_out7.gif">
+				  	</div>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				    <div style="font-size: 20px;  float: left; width: 100%; padding: 0px;">
+				      <p> "Eating on a coffee table."
+				      </p>
+				    </div>
+					<div class="center" style="font-size: 16px; width: 75%; padding: 0px;">
+					  <img src="static/images/multi_in_in8.jpg">
+					</div>
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  	<div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+				  	  <img src="static/images/multi_in_out8.gif">
+				  	</div>
+			  </div>
+	</div>
+
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				    <video width="320" height="240" controls>
+				      <source src="static/images/multi_in_in3.mp4" type="video/mp4">
+				    Your browser does not support the video tag.
+				    </video>
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <div class='center' style="font-size: 20px; width: 100%">
+				  	<p >"Panda eating bamboo, people laughing."</p>
+			      </div>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				    <div style="font-size: 20px; float: left; width: 100%; padding: 5px;">
+				      <p>"People talking."</p>
+				    </div>
+				      <div class="center" style="font-size: 16px; width: 55%; padding: 0px;">
+				        <img src="static/images/multi_in_in6.jpg">
+				      </div>
+				    			
+				    <audio controls style="width: 100%">
+				    <!-- <source src="horse.ogg" type="audio/ogg"> -->
+				    <source src="static/images/multi_in_in6.wav" type="audio/mpeg">
+				    Your browser does not support the audio element.
+				    </audio>
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:65pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <audio controls style="width: 100%; margin-top:65pt;" >
+				  <!-- <source src="horse.ogg" type="audio/ogg"> -->
+				  <source src="static/images/multi_in_out6.mp3" type="audio/mpeg">
+				  Your browser does not support the audio element.
+				  </audio>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				  <div style="font-size: 20px;  float: left; width: 100%; padding: 0px;">
+				    <p>  "Horn, blow whistle"
+				    </p>
+				  </div>
+					<div class="center" style="font-size: 16px; width: 55%; padding: 0px;">
+					  <img src="static/images/multi_in_in5.jpg">
+					</div>
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <audio controls style="width: 100%; margin-top:50pt;">
+				  <!-- <source src="horse.ogg" type="audio/ogg"> -->
+				  <source src="static/images/multi_in_out5.mp3" type="audio/mpeg">
+				  Your browser does not support the audio element.
+				  </audio>
+			  </div>
+	</div>
+	<hr class='thickline'/>
+  </div>
+  
+  
+  
+  
+  <div class="container is-max-desktop">
+  	<h2 class="title is-3" style="padding-top:50pt">Multi-Outputs Joint Generation</h2>
+  	<p style="padding-bottom: 20px;">
+  	  Model takes in <em>single or multiple prompts</em> including video, image, text, or audio to generate multiple aligned outputs like video with accompanying sound.
+  	</p>
+	
+	<hr class='thickline'/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+				  
+						<p> "Fireworks in the sky."
+					</div>	
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <video width="320" height="240" controls>
+				    <source src="static/images/joint_in_out0.mp4" type="video/mp4">
+				  Your browser does not support the video tag.
+				  </video>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+				  
+				    <p> "Dive in coral reef."
+				    </p>
+				  </div>
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <video width="320" height="240" controls>
+				    <source src="static/images/joint_in_out1.mp4" type="video/mp4">
+				  Your browser does not support the video tag.
+				  </video>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+				  
+				    	<p> "Train coming into station."
+				    	  </p>
+				</div>
+			  </div>
+			  <div class="column_arrow">
+				 <div>
+				   <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				 </div>
+			  </div>
+			  <div class="column_demo">
+				  <video width="320" height="240" controls>
+				    <source src="static/images/joint_in_out2.mp4" type="video/mp4">
+				  Your browser does not support the video tag.
+				  </video>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding-top: 170px;">
+				  
+				<p> "Sea shore sound ambience."
+				</p>
+				</div>
+			  </div>
+			  <div class="column_arrow">
+				 <div>
+				   <img width="50" style="margin-top:130pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				 </div>
+			  </div>
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+				  
+				  <p>"Wave crashes the shore, sea gulls."</p>
+				  </div>
+				  <audio controls style="width: 100%">
+				  <!-- <source src="horse.ogg" type="audio/ogg"> -->
+				  <source src="static/images/joint_in_out3.mp3" type="audio/mpeg">
+				  Your browser does not support the audio element.
+				  </audio>
+				  <img   src="static/images/joint_in_out3.jpg">
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding-top: 135px;">
+				<p> "Street ambience."
+				</p>
+				</div>
+			  </div>
+			  <div class="column_arrow">
+				 <div>
+				   <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				 </div>
+			  </div>
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+				  
+				  <p>"Noisy street, cars, traffics.."</p>
+				  </div>
+				  <audio controls style="width: 100%">
+				  <!-- <source src="horse.ogg" type="audio/ogg"> -->
+				  <source src="static/images/joint_in_out4.mp3" type="audio/mpeg">
+				  Your browser does not support the audio element.
+				  </audio>
+				  <img src="static/images/joint_in_out4.jpg">
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				<div style="font-size: 20px; float: left; width: 100%; padding-top: 20px;">
+				  <p> "Cyberpunk vibe."
+				  </p>
+				</div>
+				<div class="center" style="font-size: 16px; width: 75%; padding-top: 70px;">
+				  <img src="static/images/joint_in_in5.jpg">
+				</div>
+			  </div>
+			  <div class="column_arrow">
+				 <div>
+				   <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				 </div>
+			  </div>
+			  <div class="column_demo">
+				  <div >
+				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+				  		<p style="padding-bottom:14px">"Cyberpunk, city, movie scene, retro ambience."</p>
+				  </div>
+				  </div>
+				  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+				    <img src="static/images/joint_in_out5.jpg">
+				  </div>
+				  
+			  </div>
+	</div>
+
+	<hr class='thickline'/>
+  </div>
+  
+  
+  <div class="container is-max-desktop">
+  	<h2 class="title is-3" style="padding-top:50pt">Single-to-Single Generation</h2>
+  	<p style="padding-bottom: 20px;">
+  	  Model takes in <em>a single prompt</em> including video, image, text, or audio to generate a single output.
+  	</p>
+	
+	<hr class='thickline'/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding-top: 80px;">
+				  
+			    	<p> "Concept art by sylvain sarrailh of a haunted japan temple in a forest" </p>
+			  </div>
+			  </div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+				    <img src="static/images/single_out0.jpg">
+				  </div>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+			    	<audio controls style="width: 100%; padding-top: 120pt">
+			    	<!-- <source src="horse.ogg" type="audio/ogg"> -->
+			    	<source src="static/images/single_in1.mov" type="audio/mpeg">
+			    	Your browser does not support the audio element.
+			    	</audio>
+					</div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+				    <img src="static/images/single_out1.jpg"> 
+				  </div>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+			    	<div style="font-size: 16px; float: left; width: 100%; padding-top: 35px;">
+			    	  <img src="static/images/single_in2.jpg">
+			    	</div>
+			</div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+				    <img width="100%" src="static/images/single_out2.gif">
+				  </div>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+			    	<div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+			    	  <img src="static/images/single_in3.jpg">
+			    	</div>
+			</div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <audio controls style="width: 100%; padding-top: 120pt">
+				  <!-- <source src="horse.ogg" type="audio/ogg"> -->
+				  <source src="static/images/single_out3.mp3" type="audio/mpeg">
+				  Your browser does not support the audio element.
+				  </audio>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+			    	<audio controls style="width: 100%; padding-top: 40pt">
+			    	<!-- <source src="horse.ogg" type="audio/ogg"> -->
+			    	<source src="static/images/single_in4.flac" type="audio/mpeg">
+			    	Your browser does not support the audio element.
+			    	</audio>
+			</div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:17pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding-top: 20pt;">
+				  
+				  <p>"A magical sound, game."</p>
+				  </div>
+			  </div>
+	</div>
+	
+	<hr  class="dotline"/>
+	
+	<div class="row" style="overflow:hidden">
+			  <div class="column_demo">
+			    	<div style="font-size: 16px; float: left; width: 100%; padding-top: 0px;">
+			    	  <img src="static/images/single_in5.jpg">
+			    	</div>
+			</div>
+			  <div class="column_arrow">
+				  <div>
+				    <img width="50" style="margin-top:80pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+				  </div>
+			  </div>
+			  <div class="column_demo">
+				  <div style="font-size: 20px; float: left; width: 100%; padding-top: 105px;">
+				  <p>"Mountain view, sunset."</p>
+				  </div>
+			  </div>
+	</div>
+  	
+	
+  	<hr class='thickline'/>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{tang2023codi,
+  author  = {Tang, Zineng and Yang, Ziyi and Zhu, Chenguang and Zeng, Michael and Bansal, Mohit},
+  title   = {Generate Anything from Anything All At Once through Composable Diffusion},
+  journal = {arxiv},
+  year    = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
