@@ -140,17 +140,43 @@ $("#includedContent").load("demo_teaser.html");
 });
 </script> -->
 	
+	<script>
+		
+		function myFunction() {
+		   var mainFrameOne = document.getElementById("mainFrameOne"); 
+		   var mainFrameTwo = document.getElementById("mainFrameTwo");
+		   
+		   mainFrameOne.style.display = (
+		       mainFrameOne.style.display == "none" ? "block" : "none"); 
+		   mainFrameTwo.style.display = (
+		       mainFrameTwo.style.display == "none" ? "block" : "none"); 
+		}
+
+		</script>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-		<img src="static/images/teaser.gif">
+		
+		<div id="mainFrameOne">
+		    <video width="800" controls>
+		      <source src="static/images/teaser.mp4" type="video/mp4">
+		    Your browser does not support the video tag.
+		    </video>
+		</div>
+		<div id="mainFrameTwo" style="display:none;">
+		    <img src="static/images/teaser.gif">
+		</div>
+		<button class="center" style="height:50px;width:250px;font-size:12pt;border-radius: 8px;" onclick="myFunction()">Click me to switch between gif and video</button>
+		
+		
+		<!-- <img src="static/images/teaser.gif"> -->
 		
 		<!-- <div id="includedContent"></div> -->
       <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
       </video> -->
-      <h2 class="subtitle has-text-centered">
+      <h2 class="subtitle has-text-centered" style="padding-top: 20px">
         <span class="dnerf">CoDi</span> can generate anything to anything from video, image, audio, and text.
       </h2>
     </div>
