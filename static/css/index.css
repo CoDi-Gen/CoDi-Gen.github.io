@@ -38,6 +38,21 @@ body {
   width: 50%;
 }
 
+.arrow_caption {
+    font-size:25pt;
+}
+
+
+.center_caption {
+      left: 0;
+      right: 10px;
+      font-size: 22px; 
+	  width: 70%; 
+	  padding-right: 70px;
+      margin: auto;
+	  text-align: center;
+}
+
 .arrow_center {
  float: left;
   display: block;
