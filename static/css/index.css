@@ -5,7 +5,7 @@ body {
 .column_demo {
   float: left;
   width: 35%;
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 .column_arrow {
@@ -13,6 +13,7 @@ body {
   float: left;
   width: 20%;
   padding: 5px;
+  height: 100%;
 }
 
 .dotline {
@@ -58,7 +59,7 @@ body {
       font-size: 22px; 
 	  width: 70%; 
 	  padding-right: 70px;
-	  padding-bottom: 10px;
+	  padding-bottom: 20px;
       margin: auto;
 	  text-align: center;
 }
