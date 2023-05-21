@@ -53,9 +53,9 @@ through Composable Diffusion</title>
           <h1 class="title is-1 publication-title">CoDi: Any-to-Any Generation via Composable Diffusion</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://zinengtang.github.io/">Zineng Tang</a><sup>1</sup>,</span>
+              <a href="https://zinengtang.github.io/">Zineng Tang</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a href="https://ziyi-yang.github.io/">Ziyi Yang*</a><sup>2</sup>,</span>
+              <a href="https://ziyi-yang.github.io/">Ziyi Yang</a><sup>2†</sup>,</span>
             <span class="author-block">
               <a href="https://www.microsoft.com/en-us/research/people/chezhu/">Chenguang Zhu</a><sup>2</sup>,
             </span>
@@ -63,14 +63,14 @@ through Composable Diffusion</title>
               <a href="https://www.microsoft.com/en-us/research/people/nzeng/">Michael Zeng</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.cs.unc.edu/~mbansal/">Mohit Bansal*</a><sup>1</sup>
+              <a href="https://www.cs.unc.edu/~mbansal/">Mohit Bansal</a><sup>1†</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of North Carolina at Chapel Hill,</span>
             <span class="author-block"><sup>2</sup>Microsoft Azure Cognitive Services Research</span>
-			<span class="author-block"><sup>*</sup>Corresponding Authors</span>
+			<span class="author-block"><sup>*</sup> Work done at Microsoft internship and UNC. <sup>†</sup>Corresponding Authors</span>
           </div>
 
           <div class="column has-text-centered">
@@ -160,14 +160,8 @@ $("#includedContent").load("demo_teaser.html");
 		<div id="mainFrameOne">
 		    <img src="static/images/teaser.gif">
 		</div>
-		<div id="mainFrameTwo" style="display:none;">
-			<video width="800" controls>
-			  <source src="static/images/teaser.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video>
-		    
-		</div>
-		<button class="center" style="height:50px;width:250px;font-size:12pt;border-radius: 8px;" onclick="myFunction()">Click me to switch between gif and video</button>
+		
+		<!-- <button class="center" style="height:50px;width:250px;font-size:12pt;border-radius: 8px;" onclick="myFunction()">Click me to switch between gif and video</button> -->
 		
 		
 		<!-- <img src="static/images/teaser.gif"> -->
@@ -180,6 +174,18 @@ $("#includedContent").load("demo_teaser.html");
       <h2 class="subtitle has-text-centered" style="padding-top: 20px">
         <span class="dnerf">CoDi</span> can generate anything to anything from video, image, audio, and text.
       </h2>
+	  
+	  <div id="mainFrameTwo">
+	  	<video width="800" controls>
+	  	  <source src="static/images/teaser.mp4" type="video/mp4">
+	  	Your browser does not support the video tag.
+	  	</video>
+	      
+	  </div>
+	  
+	  <h2 class="subtitle has-text-centered" style="padding-top: 20px">
+	    <span class="dnerf">CoDi</span> demo video.
+	  </h2>
     </div>
   </div>
 </section>
