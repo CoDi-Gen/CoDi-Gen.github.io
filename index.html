@@ -50,8 +50,7 @@ through Composable Diffusion</title>
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CoDi: Generate Anything from Anything All At Once
-through Composable Diffusion</h1>
+          <h1 class="title is-1 publication-title">CoDi: Any-to-Any Generation via Composable Diffusion</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://zinengtang.github.io/">Zineng Tang</a><sup>1</sup>,</span>
@@ -133,18 +132,20 @@ through Composable Diffusion</h1>
   </div>
 </section>
 
-
+<!-- 
 <script src="jquery.js"></script> 
 <script> 
 $(function(){
 $("#includedContent").load("demo_teaser.html"); 
 });
-</script> 
+</script> -->
 	
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-		<div id="includedContent"></div>
+		<img src="static/images/teaser.gif">
+		
+		<!-- <div id="includedContent"></div> -->
       <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
@@ -155,11 +156,11 @@ $("#includedContent").load("demo_teaser.html");
     </div>
   </div>
 </section>
-
+<!-- 
 <script>
 includeHTML();
 </script>
-
+ -->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -169,23 +170,7 @@ includeHTML();
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In this paper, we introduce Composable Diffusion (CoDi), 
-			an unprecedented generative model capable of generating any 
-			combination of multiple modalities, such as language, image, 
-			video, and audio, from any input modalities groups simultaneously.
-			Existing generative AI systems lack the ability to generate
-		    synchronized multimodal outputs and are limited in the types 
-			  of the modalities they can process. CoDi employs a novel 
-			  joint generation strategy by building a shared multimodal
-			   space in the diffusion process, enabling the synchronized
-				generation of intertwined modalities, such as temporally 
-				aligned video and audio. Despite the absence of available training
-				 datasets for many modality combinations, we manage to achieve the
-				  joint generation of any combination of modalities through a novel
-				   adaptive training strategy. Our proposed "Bridging Alignment" aligns
-					prompt modalities, allowing CoDi to freely condition on any input combinations.
-					 Highly customizable and flexible, CoDi unprecedentedly achieves any-modality 
-					 to any-modality generation, with high correspondence of joint modality generation. We show that CoDi's synthesis quality outperforms or is on par with unimodal state-of-the-art. 
+            We present Composable Diffusion (CoDi), a novel generative model capable of generating any combination of output modalities, such as language, image, video, or audio, from any combination of input modalities. Unlike existing generative AI systems, CoDi can generate multiple modalities in parallel and its input is not limited to a subset of modalities like text or image. Despite the absence of training datasets for many combinations of modalities, we propose to align modalities in both the input and output space. This allows CoDi to freely condition on any input combination and generate any group of modalities, even if they are not present in the training data. CoDi employs a novel composable generation strategy which involves building a shared multimodal space by bridging alignment in the diffusion process, enabling the synchronized generation of intertwined modalities, such as temporally aligned video and audio. Highly customizable and flexible, CoDi achieves strong joint-modality generation quality, and outperforms or is on par with the unimodal state-of-the-art for single-modality synthesis.
           </p>
         </div>
       </div>
@@ -196,16 +181,19 @@ includeHTML();
    <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Model Architecture</h2>
-        <div class="publication-video">
-			<img width="600" class="arrow_center" src="static/images/main_architecture.jpg">
-			<p>Composable diffusion uses a multi-stage training scheme to achieve training on only linear number of tasks and inference on all combinations.</p>
+        <div>
+			<img width="600" src="static/images/main_architecture.jpg">
+			<figcaption>Composable diffusion uses a multi-stage training scheme to be able to train on only a linear number of tasks but inference on all combinations of input and output modalities.
+	</figcaption>
 			<!-- <embed src=="static/images/main_architecture.pdf" width="500" height="375" 
 			 type="application/pdf"> -->
 		</div>
+		
       </div>
     </div>
     <!--/ Paper video. -->
   </div>
+  
 </section>
 
 
