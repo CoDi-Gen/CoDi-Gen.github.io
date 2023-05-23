@@ -233,6 +233,296 @@ includeHTML();
 
 
 <section class="section">
+	
+	<div class="container is-max-desktop">
+		<h2 class="title is-3" style="padding-top:50pt">Multi-Outputs Joint Generation</h2>
+		<p style="padding-bottom: 20px;">
+		  Model takes in <em>single or multiple prompts</em> including video, image, text, or audio to generate multiple aligned outputs like video with accompanying sound.
+		</p>
+		
+		<hr class='thickline'/>
+		
+		<div class="center_caption">
+			<p><strong>Text + Image + Audio &#x2192 Video + Audio </strong></p>
+		</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					  <div style="font-size: 20px;  float: left; width: 100%; padding: 0px;">
+					    <p> "Teddy bear on a skateboard, 4k, high resolution"
+					    </p>
+					  </div>
+					  <div class="center" style="font-size: 16px; width: 70%; padding: 0px;">
+					    <img src="static/images/multi_in_in2-0.jpg">
+					  </div>
+					  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+					    <audio controls style="width: 100%">
+					  	<!-- <source src="horse.ogg" type="audio/ogg"> -->
+					  	<source src="static/images/multi_in_in2-0.wav" type="audio/mpeg">
+					    Your browser does not support the audio element.
+					    </audio>
+					  </div>
+				  </div>
+				  <div class="column_arrow">
+					  <div>
+					    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					  </div>
+				  </div>
+				  <div class="column_demo">
+					  <video width="320" height="240" controls>
+					    <source src="static/images/teddybear.mp4" type="video/mp4">
+					  Your browser does not support the video tag.
+					  </video>
+				  </div>
+		</div>
+		<hr  class="dotline"/>
+		
+		<div class="center_caption">
+			<p><strong>Text &#x2192 Video + Audio </strong></p>
+		</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+					  
+							<p> "Fireworks in the sky."
+						</div>	
+				  </div>
+				  <div class="column_arrow">
+					  <div>
+					    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					  </div>
+				  </div>
+				  <div class="column_demo">
+					  <video width="320" height="240" controls>
+					    <source src="static/images/joint_in_out0.mp4" type="video/mp4">
+					  Your browser does not support the video tag.
+					  </video>
+				  </div>
+		</div>
+		
+		
+		<hr  class="dotline"/>
+		<div class="center_caption">
+			<p><strong>Text &#x2192 Video + Audio</strong> </p>
+		</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+					  
+					    <p> "Dive in coral reef."
+					    </p>
+					  </div>
+				  </div>
+				  <div class="column_arrow">
+					  <div>
+					    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					  </div>
+				  </div>
+				  <div class="column_demo">
+					  <video width="320" height="240" controls>
+					    <source src="static/images/joint_in_out1.mp4" type="video/mp4">
+					  Your browser does not support the video tag.
+					  </video>
+				  </div>
+		</div>
+		
+		
+		<hr  class="dotline"/>
+		<div class="center_caption">
+			<p><strong>Text &#x2192 Video + Audio </strong></p>
+		</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+					  
+					    	<p> "Train coming into station."
+					    	  </p>
+					</div>
+				  </div>
+				  <div class="column_arrow">
+					 <div>
+					   <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					 </div>
+				  </div>
+				  <div class="column_demo">
+					  <video width="320" height="240" controls>
+					    <source src="static/images/joint_in_out2.mp4" type="video/mp4">
+					  Your browser does not support the video tag.
+					  </video>
+				  </div>
+		</div>
+		
+		
+		<hr  class="dotline"/>
+		<div class="center_caption">
+			<p><strong>Audio + Image &#x2192 Text + Image</strong> </p>
+		</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					<audio controls style="width: 100%">
+					<!-- <source src="horse.ogg" type="audio/ogg"> -->
+					<source src="static/images/piano.wav" type="audio/mpeg">
+					Your browser does not support the audio element.
+					</audio>
+					<div class="center" style="font-size: 16px; width: 75%; padding-top: 30px;">
+					  <img src="static/images/forest.jpg">
+					</div>
+				  </div>
+				  <div class="column_arrow">
+					 <div>
+					   <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					 </div>
+				  </div>
+				  <div class="column_demo">
+					  <div >
+					  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+					  		<p style="padding-bottom:14px">"Playing piano in a forest."</p>
+					  </div>
+					  </div>
+					  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+					    <img src="static/images/piano.jpg">
+					  </div>
+					  
+				  </div>
+		</div>
+			
+		
+		<hr  class="dotline"/>
+				<div class="center_caption">
+					<p><strong>Text + Audio + Image &#x2192 Image </strong></p>
+				</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					    <div style="font-size: 20px;  float: left; width: 100%; padding: 0px;">
+					      <p> "Teddy bear on a skateboard, 4k, high resolution"
+					      </p>
+					    </div>
+							<div class="center" style="font-size: 16px; width: 70%; padding: 0px;">
+							  <img src="static/images/multi_in_in2-0.jpg">
+							</div>
+							<div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+							  <audio controls style="width: 100%">
+								<!-- <source src="horse.ogg" type="audio/ogg"> -->
+								<source src="static/images/multi_in_in2-0.wav" type="audio/mpeg">
+							  Your browser does not support the audio element.
+							  </audio>
+							</div>
+				  </div>
+				  <div class="column_arrow">
+					  <div>
+					    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					  </div>
+				  </div>
+				  <div class="column_demo">
+					  <div style="font-size: 20px;  float: left; width: 100%; padding: 0px;">
+					    <p> "A toy on the street sitting on a board"
+					    </p>
+					  </div>
+					  	<div class="content" style="font-size: 12px; float: top; width: 100%; padding: 0px;">
+					  	  <img src="static/images/multi_in_out2.jpg">
+					  	</div>
+						
+				  </div>
+		</div>
+		
+		<hr  class="dotline"/>
+		<div class="center_caption">
+			<p><strong>Text &#x2192 Text + Audio + Image</strong> </p>
+		</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					  <div style="font-size: 20px; float: left; width: 100%; padding-top: 170px;">
+					  
+					<p> "Sea shore sound ambience."
+					</p>
+					</div>
+				  </div>
+				  <div class="column_arrow">
+					 <div>
+					   <img width="50" style="margin-top:130pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					 </div>
+				  </div>
+				  <div class="column_demo">
+					  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+					  
+					  <p>"Wave crashes the shore, sea gulls."</p>
+					  </div>
+					  <audio controls style="width: 100%">
+					  <!-- <source src="horse.ogg" type="audio/ogg"> -->
+					  <source src="static/images/joint_in_out3.mp3" type="audio/mpeg">
+					  Your browser does not support the audio element.
+					  </audio>
+					  <img   src="static/images/joint_in_out3.jpg">
+				  </div>
+		</div>
+		
+		
+		<hr  class="dotline"/>
+		<div class="center_caption">
+			<p><strong>Text &#x2192 Text + Audio + Image </strong></p>
+		</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					  <div style="font-size: 20px; float: left; width: 100%; padding-top: 135px;">
+					<p> "Street ambience."
+					</p>
+					</div>
+				  </div>
+				  <div class="column_arrow">
+					 <div>
+					   <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					 </div>
+				  </div>
+				  <div class="column_demo">
+					  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+					  
+					  <p>"Noisy street, cars, traffics.."</p>
+					  </div>
+					  <audio controls style="width: 100%">
+					  <!-- <source src="horse.ogg" type="audio/ogg"> -->
+					  <source src="static/images/joint_in_out4.mp3" type="audio/mpeg">
+					  Your browser does not support the audio element.
+					  </audio>
+					  <img src="static/images/joint_in_out4.jpg">
+				  </div>
+		</div>
+		
+		
+		<hr  class="dotline"/>
+		<div class="center_caption">
+			<p><strong>Text + Image &#x2192 Text + Image</strong> </p>
+		</div>
+		<div class="row" style="overflow:hidden">
+				  <div class="column_demo">
+					<div style="font-size: 20px; float: left; width: 100%; padding-top: 20px;">
+					  <p> "Cyberpunk vibe."
+					  </p>
+					</div>
+					<div class="center" style="font-size: 16px; width: 75%; padding-top: 70px;">
+					  <img src="static/images/joint_in_in5.jpg">
+					</div>
+				  </div>
+				  <div class="column_arrow">
+					 <div>
+					   <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
+					 </div>
+				  </div>
+				  <div class="column_demo">
+					  <div >
+					  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
+					  		<p style="padding-bottom:14px">"Cyberpunk, city, movie scene, retro ambience."</p>
+					  </div>
+					  </div>
+					  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
+					    <img src="static/images/joint_in_out5.jpg">
+					  </div>
+					  
+				  </div>
+		</div>
+	
+	  
+		<hr class='thickline'/>
+	</div>
+	
   <div class="container is-max-desktop">
 	<h2 class="title is-3" style="padding-top:50pt">Multiple Conditioning</h2>
 	<p style="padding-bottom: 20px;">
@@ -242,7 +532,7 @@ includeHTML();
 		<hr class='thickline'/>
 		
 		<div class="center_caption">
-			<p><strong>Text + Audio <b class="arrow_caption">&#x2192</b> Image </strong></p>
+			<p><strong>Text + Audio &#x2192 Image </strong></p>
 		</div>
 		<div class="row" style="overflow:hidden; vertical-align: middle;">
 				  <div class="column_demo">
@@ -274,7 +564,7 @@ includeHTML();
 		
 		<hr  class="dotline"/>
 		<div class="center_caption">
-			<p><strong>Text + Image <b class="arrow_caption">&#x2192</b> Image </strong></p>
+			<p><strong>Text + Image &#x2192 Image </strong></p>
 		</div>
 		<div class="row" style="overflow:hidden">
 				  <div class="column_demo">
@@ -300,44 +590,13 @@ includeHTML();
 		
 		
 		
-		<hr  class="dotline"/>
-		<div class="center_caption">
-			<p><strong>Text + Audio + Image <b class="arrow_caption">&#x2192</b> Image </strong></p>
-		</div>
-       <div class="row" style="overflow:hidden">
-       		  <div class="column_demo">
-       			    <div style="font-size: 20px;  float: left; width: 100%; padding: 0px;">
-       			      <p> "Teddy bear on a skateboard, 4k, high resolution"
-       			      </p>
-       			    </div>
-					<div class="center" style="font-size: 16px; width: 70%; padding: 0px;">
-					  <img src="static/images/multi_in_in2-0.jpg">
-					</div>
-					<div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
-					  <audio controls style="width: 100%">
-						<!-- <source src="horse.ogg" type="audio/ogg"> -->
-						<source src="static/images/multi_in_in2-0.wav" type="audio/mpeg">
-					  Your browser does not support the audio element.
-					  </audio>
-					</div>
-       		  </div>
-       		  <div class="column_arrow">
-       			  <div>
-       			    <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
-       			  </div>
-       		  </div>
-       		  <div class="column_demo">
-       			  	<div class="content" style="font-size: 12px; float: top; width: 100%; padding: 0px;">
-       			  	  <img src="static/images/multi_in_out2.jpg">
-       			  	</div>
-       		  </div>
-       </div>
+		
 	   
 	
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Text + Audio <b class="arrow_caption">&#x2192</b> Video </strong></p>
+		<p><strong>Text + Audio &#x2192 Video </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -365,7 +624,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Text + Image <b class="arrow_caption">&#x2192</b> Video </strong></p>
+		<p><strong>Text + Image &#x2192 Video </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -394,7 +653,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Text + Image <b class="arrow_caption">&#x2192</b> Video </strong></p>
+		<p><strong>Text + Image &#x2192 Video </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -421,7 +680,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Video + Audio <b class="arrow_caption">&#x2192</b> Text </strong></p>
+		<p><strong>Video + Audio &#x2192 Text </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -445,7 +704,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Image + Audio <b class="arrow_caption">&#x2192</b> Audio </strong></p>
+		<p><strong>Image + Audio &#x2192 Audio </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -479,7 +738,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Text + Image <b class="arrow_caption">&#x2192</b> Audio </strong></p>
+		<p><strong>Text + Image &#x2192 Audio </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -511,222 +770,7 @@ includeHTML();
   
   
   
-  <div class="container is-max-desktop">
-  	<h2 class="title is-3" style="padding-top:50pt">Multi-Outputs Joint Generation</h2>
-  	<p style="padding-bottom: 20px;">
-  	  Model takes in <em>single or multiple prompts</em> including video, image, text, or audio to generate multiple aligned outputs like video with accompanying sound.
-  	</p>
-	
-	<hr class='thickline'/>
-	
-	<div class="center_caption">
-		<p><strong>Text + Image + Audio <b class="arrow_caption">&#x2192</b> Video + Audio </strong></p>
-	</div>
-	<div class="row" style="overflow:hidden">
-			  <div class="column_demo">
-				  <div style="font-size: 20px;  float: left; width: 100%; padding: 0px;">
-				    <p> "Teddy bear on a skateboard, 4k, high resolution"
-				    </p>
-				  </div>
-				  <div class="center" style="font-size: 16px; width: 70%; padding: 0px;">
-				    <img src="static/images/multi_in_in2-0.jpg">
-				  </div>
-				  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
-				    <audio controls style="width: 100%">
-				  	<!-- <source src="horse.ogg" type="audio/ogg"> -->
-				  	<source src="static/images/multi_in_in2-0.wav" type="audio/mpeg">
-				    Your browser does not support the audio element.
-				    </audio>
-				  </div>
-			  </div>
-			  <div class="column_arrow">
-				  <div>
-				    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
-				  </div>
-			  </div>
-			  <div class="column_demo">
-				  <video width="320" height="240" controls>
-				    <source src="static/images/teddybear.mp4" type="video/mp4">
-				  Your browser does not support the video tag.
-				  </video>
-			  </div>
-	</div>
-	<hr  class="dotline"/>
-	
-	<div class="center_caption">
-		<p><strong>Text <b class="arrow_caption">&#x2192</b> Video + Audio </strong></p>
-	</div>
-	<div class="row" style="overflow:hidden">
-			  <div class="column_demo">
-				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
-				  
-						<p> "Fireworks in the sky."
-					</div>	
-			  </div>
-			  <div class="column_arrow">
-				  <div>
-				    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
-				  </div>
-			  </div>
-			  <div class="column_demo">
-				  <video width="320" height="240" controls>
-				    <source src="static/images/joint_in_out0.mp4" type="video/mp4">
-				  Your browser does not support the video tag.
-				  </video>
-			  </div>
-	</div>
-	
-	
-	<hr  class="dotline"/>
-	<div class="center_caption">
-		<p><strong>Text <b class="arrow_caption">&#x2192</b> Video + Audio</strong> </p>
-	</div>
-	<div class="row" style="overflow:hidden">
-			  <div class="column_demo">
-				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
-				  
-				    <p> "Dive in coral reef."
-				    </p>
-				  </div>
-			  </div>
-			  <div class="column_arrow">
-				  <div>
-				    <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
-				  </div>
-			  </div>
-			  <div class="column_demo">
-				  <video width="320" height="240" controls>
-				    <source src="static/images/joint_in_out1.mp4" type="video/mp4">
-				  Your browser does not support the video tag.
-				  </video>
-			  </div>
-	</div>
-	
-	
-	<hr  class="dotline"/>
-	<div class="center_caption">
-		<p><strong>Text <b class="arrow_caption">&#x2192</b> Video + Audio </strong></p>
-	</div>
-	<div class="row" style="overflow:hidden">
-			  <div class="column_demo">
-				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
-				  
-				    	<p> "Train coming into station."
-				    	  </p>
-				</div>
-			  </div>
-			  <div class="column_arrow">
-				 <div>
-				   <img width="50" style="margin-top:50pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
-				 </div>
-			  </div>
-			  <div class="column_demo">
-				  <video width="320" height="240" controls>
-				    <source src="static/images/joint_in_out2.mp4" type="video/mp4">
-				  Your browser does not support the video tag.
-				  </video>
-			  </div>
-	</div>
-	
-	
-	<hr  class="dotline"/>
-	<div class="center_caption">
-		<p><strong>Text <b class="arrow_caption">&#x2192</b> Text + Audio + Image</strong> </p>
-	</div>
-	<div class="row" style="overflow:hidden">
-			  <div class="column_demo">
-				  <div style="font-size: 20px; float: left; width: 100%; padding-top: 170px;">
-				  
-				<p> "Sea shore sound ambience."
-				</p>
-				</div>
-			  </div>
-			  <div class="column_arrow">
-				 <div>
-				   <img width="50" style="margin-top:130pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
-				 </div>
-			  </div>
-			  <div class="column_demo">
-				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
-				  
-				  <p>"Wave crashes the shore, sea gulls."</p>
-				  </div>
-				  <audio controls style="width: 100%">
-				  <!-- <source src="horse.ogg" type="audio/ogg"> -->
-				  <source src="static/images/joint_in_out3.mp3" type="audio/mpeg">
-				  Your browser does not support the audio element.
-				  </audio>
-				  <img   src="static/images/joint_in_out3.jpg">
-			  </div>
-	</div>
-	
-	
-	<hr  class="dotline"/>
-	<div class="center_caption">
-		<p><strong>Text <b class="arrow_caption">&#x2192</b> Text + Audio + Image </strong></p>
-	</div>
-	<div class="row" style="overflow:hidden">
-			  <div class="column_demo">
-				  <div style="font-size: 20px; float: left; width: 100%; padding-top: 135px;">
-				<p> "Street ambience."
-				</p>
-				</div>
-			  </div>
-			  <div class="column_arrow">
-				 <div>
-				   <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
-				 </div>
-			  </div>
-			  <div class="column_demo">
-				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
-				  
-				  <p>"Noisy street, cars, traffics.."</p>
-				  </div>
-				  <audio controls style="width: 100%">
-				  <!-- <source src="horse.ogg" type="audio/ogg"> -->
-				  <source src="static/images/joint_in_out4.mp3" type="audio/mpeg">
-				  Your browser does not support the audio element.
-				  </audio>
-				  <img src="static/images/joint_in_out4.jpg">
-			  </div>
-	</div>
-	
-	
-	<hr  class="dotline"/>
-	<div class="center_caption">
-		<p><strong>Text + Image <b class="arrow_caption">&#x2192</b> Text + Image</strong> </p>
-	</div>
-	<div class="row" style="overflow:hidden">
-			  <div class="column_demo">
-				<div style="font-size: 20px; float: left; width: 100%; padding-top: 20px;">
-				  <p> "Cyberpunk vibe."
-				  </p>
-				</div>
-				<div class="center" style="font-size: 16px; width: 75%; padding-top: 70px;">
-				  <img src="static/images/joint_in_in5.jpg">
-				</div>
-			  </div>
-			  <div class="column_arrow">
-				 <div>
-				   <img width="50" style="margin-top:100pt; margin-left:30pt" src="static/images/icons/arrow_icon.jpg">
-				 </div>
-			  </div>
-			  <div class="column_demo">
-				  <div >
-				  <div style="font-size: 20px; float: left; width: 100%; padding: 0px;">
-				  		<p style="padding-bottom:14px">"Cyberpunk, city, movie scene, retro ambience."</p>
-				  </div>
-				  </div>
-				  <div style="font-size: 16px; float: left; width: 100%; padding: 0px;">
-				    <img src="static/images/joint_in_out5.jpg">
-				  </div>
-				  
-			  </div>
-	</div>
 
-    
-	<hr class='thickline'/>
-  </div>
   
   
   <div class="container is-max-desktop">
@@ -737,7 +781,7 @@ includeHTML();
 	
 	<hr class='thickline'/>
 	<div class="center_caption">
-		<p><strong>Text <b class="arrow_caption">&#x2192</b> Image</strong> </p>
+		<p><strong>Text &#x2192 Image</strong> </p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -761,7 +805,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Audio <b class="arrow_caption">&#x2192</b> Image </strong></p>
+		<p><strong>Audio &#x2192 Image </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo" style="float:left; height:250pt">
@@ -786,7 +830,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Image <b class="arrow_caption">&#x2192</b> Video </strong></p>
+		<p><strong>Image &#x2192 Video </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -809,7 +853,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Image <b class="arrow_caption">&#x2192</b> Audio</strong> </p>
+		<p><strong>Image &#x2192 Audio</strong> </p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -834,7 +878,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Audio <b class="arrow_caption">&#x2192</b> Text </strong></p>
+		<p><strong>Audio &#x2192 Text </strong></p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
@@ -864,7 +908,7 @@ includeHTML();
 	
 	<hr  class="dotline"/>
 	<div class="center_caption">
-		<p><strong>Image <b class="arrow_caption">&#x2192</b> Text</strong> </p>
+		<p><strong>Image &#x2192 Text</strong> </p>
 	</div>
 	<div class="row" style="overflow:hidden">
 			  <div class="column_demo">
